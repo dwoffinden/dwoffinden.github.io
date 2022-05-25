@@ -6,9 +6,19 @@ plugins:
   - jekyll-github-metadata
   - jemoji
 
+# https://jekyllrb.com/docs/troubleshooting/#configuration-problems
 exclude:
-  - README.md
   - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - gemset.nix
+  - shell.nix
+  - CNAME
 
 social_media:
   facebook: d.woffinden
@@ -30,3 +40,7 @@ social_media:
 
 sass:
   style: compressed
+  # implementation: sass-embedded
+  sass_dir: assets/css/
+  load_paths:
+    - node_modules/
