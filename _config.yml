@@ -10,14 +10,6 @@ exclude:
   - README.md
   - Gemfile
 
-projects:
-  sort_by: pushed
-  limit: 21
-  exclude:
-    archived: false
-    forks: false
-    projects:
-
 social_media:
   facebook: d.woffinden
   keybase: dwoffinden
