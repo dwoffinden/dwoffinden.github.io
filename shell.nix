@@ -6,4 +6,5 @@ let
     name = "gems-for-some-project";
     gemdir = ./.;
   };
-in pkgs.mkShell { packages = [ gems gems.wrappedRuby ]; }
+in
+pkgs.mkShell { packages = [ gems gems.wrappedRuby ]; }
