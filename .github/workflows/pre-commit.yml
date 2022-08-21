@@ -1,0 +1,17 @@
+name: pre-commit
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.0.2
+      - uses: ruby/setup-ruby@v1.115.2
+        with:
+          bundler-cache: true
+          cache-version: 0
+
+      - run: bundle exec jekyll build
