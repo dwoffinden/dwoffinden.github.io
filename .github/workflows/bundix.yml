@@ -1,0 +1,23 @@
+name: bundix
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  bundix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.0.2
+      - uses: cachix/install-nix-action@v17
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix-env -i bundix nixpkgs-fmt -f '<nixpkgs>'
+      - run: bundix -l
+      - run: 'nixpkgs-fmt *.nix'
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4.0.4
+        with:
+          delete-branch: true
+          commit-message: bundix update
+          title: bundix update
