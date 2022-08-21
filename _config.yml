@@ -28,3 +28,5 @@ social_media:
   # website: http://your_website_url
   # youtube: your_username
 
+sass:
+  style: compressed
