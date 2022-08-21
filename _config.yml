@@ -6,9 +6,16 @@ plugins:
   - jekyll-github-metadata
   - jemoji
 
+# https://jekyllrb.com/docs/troubleshooting/#configuration-problems
 exclude:
-  - README.md
   - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
   - gemset.nix
   - shell.nix
   - CNAME
