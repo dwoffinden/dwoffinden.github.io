@@ -1,4 +1,5 @@
 {
+  "name": "daw.dev",
   "dependencies": {
     "@primer/css": "15"
   }
