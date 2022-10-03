@@ -25,16 +25,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@3068fa83f9cbd7ae106cac45483635a2f3a195c9
+        uses: ruby/setup-ruby@31a7f6d628878b80bc63375a93ae079ec50a1601
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
 
       - name: Setup Node
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
           node-version: latest
           cache: yarn
@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@45efe609374726fd94570f0e5a4c32f41675e823
+        uses: actions/configure-pages@fc89b04e7d263ef510d9e77d3a1d088fb2688522
 
       # defaults output to '/_site':
       # --baseurl ${{ steps.pages.outputs.base_path }}
@@ -51,7 +51,7 @@ jobs:
 
         # This will automatically upload an artifact from the '/_site' directory
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@a597aecd27af1cf14095ccaa29169358e3d91e28
+        uses: actions/upload-pages-artifact@253fd476ed429e83b7aae64a92a75b4ceb1a17cf
 
   deploy:
     environment:
@@ -62,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@44d42469122ee9e44e202f0a0fab6f266fb3f139
+        uses: actions/deploy-pages@0243b6c10d06cb8e95ed8ee471231877621202c0
