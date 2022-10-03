@@ -12,15 +12,15 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
 
-      - uses: ruby/setup-ruby@3068fa83f9cbd7ae106cac45483635a2f3a195c9
+      - uses: ruby/setup-ruby@7d546f4868fb108ed378764d873683f920672ae2
         with:
           bundler-cache: true
           cache-version: 0
 
       - name: Setup Node
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
         with:
           node-version: latest
           cache: yarn
