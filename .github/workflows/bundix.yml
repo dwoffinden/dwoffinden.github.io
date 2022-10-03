@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+# TODO: make this run on PRs and push to the branch?
+
 permissions:
   contents: write
 
