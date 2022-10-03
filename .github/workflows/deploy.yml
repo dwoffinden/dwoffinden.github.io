@@ -34,7 +34,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
 
       - name: Setup Node
-        uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93
+        uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b
         with:
           node-version: latest
           cache: yarn
@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@45efe609374726fd94570f0e5a4c32f41675e823
+        uses: actions/configure-pages@2ce6d5eaa1f7b36a30c9b424cd73fab661857cfe
 
       # defaults output to '/_site':
       # --baseurl ${{ steps.pages.outputs.base_path }}
@@ -62,4 +62,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@44d42469122ee9e44e202f0a0fab6f266fb3f139
+        uses: actions/deploy-pages@75c1124b142c363849aac2d23c005a4faf87c90f
