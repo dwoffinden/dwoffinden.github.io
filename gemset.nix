@@ -173,10 +173,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0k4xcg2rsh1qghh0m3zic5bbv6mjhnc8vfmnsbs490iyfklsbj2p";
+      sha256 = "099l7q0lly99cirxcs2gd2pbygfqg8ki777wax9xs1kp0jy9wd6s";
       type = "gem";
     };
-    version = "17.8.0";
+    version = "17.9.0";
   };
   jekyll-sass-converter = {
     dependencies = [ "sassc" ];
@@ -300,10 +300,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0w9pjzfj932z6y37y05maqf4p0slh8k20vbjwchrxa39x6d7jycm";
+      sha256 = "15nikxpm61ymqyj3jqsfclvbirf71b74xs1zqx93vh4zy1zm9f4n";
       type = "gem";
     };
-    version = "17.8.0";
+    version = "17.9.0";
   };
   octokit = {
     dependencies = [ "faraday" "sawyer" ];
