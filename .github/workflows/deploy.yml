@@ -51,7 +51,7 @@ jobs:
 
         # This will automatically upload an artifact from the '/_site' directory
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@c8641e80048cf33d329c39df3bcc53196178335a
+        uses: actions/upload-pages-artifact@253fd476ed429e83b7aae64a92a75b4ceb1a17cf
 
   deploy:
     environment:
