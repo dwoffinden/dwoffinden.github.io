@@ -43,7 +43,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@c5a3e1159e0cbdf0845eb8811bd39e39fc3099c2
+        uses: actions/configure-pages@5992ce8fd557229bb0e98f78a89136a149cc9758
 
       # defaults output to '/_site':
       # --baseurl ${{ steps.pages.outputs.base_path }}
