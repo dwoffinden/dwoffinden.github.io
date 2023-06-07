@@ -19,6 +19,8 @@ exclude:
   - gemset.nix
   - shell.nix
   - CNAME
+  - package.json
+  - yarn.lock
 
 social_media:
   facebook: d.woffinden
