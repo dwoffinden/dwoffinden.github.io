@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@bc1dd263b68cb5626dbb55d5c89777d79372c484
+        uses: ruby/setup-ruby@250fcd6a742febb1123a77a841497ccaa8b9e939
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
@@ -51,7 +51,7 @@ jobs:
 
         # This will automatically upload an artifact from the '/_site' directory
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@64bcae551a7b18bcb9a09042ddf1960979799187
+        uses: actions/upload-pages-artifact@66b63f4a7de003f4f00cc8e9af4b83b8f2abdb96
 
   deploy:
     environment:
