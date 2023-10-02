@@ -84,14 +84,14 @@
     version = "3.0.2";
   };
   ffi = {
-    groups = [ "default" "jekyll_plugins" ];
+    groups = [ "default" ];
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "1862ydmclzy1a0cjbvm8dz7847d9rch495ib0zb64y84d3xd4bkg";
+      sha256 = "0faxk6nsyh36anl8bmsk1b2cfaxsn9398bg9wcn2scqcpf1axwlf";
       type = "gem";
     };
-    version = "1.15.5";
+    version = "1.16.2";
   };
   forwardable-extended = {
     groups = [ "default" ];
@@ -118,10 +118,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0f631svrz88nnn04mq1pfc66zzi1yl95jzwsnvnwwbsdy5zvnp0f";
+      sha256 = "0pcl4x4cw3snl5xzs99lm82m9xkfs8vm1a8dfrc34pwb77mwrwv3";
       type = "gem";
     };
-    version = "3.24.2";
+    version = "3.24.3";
   };
   html-pipeline = {
     dependencies = [ "activesupport" "nokogiri" ];
@@ -183,10 +183,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0kbsw27f79msqmqs9kr717ypsn9yyfzfip3qkkym5aapb1p8iz1h";
+      sha256 = "0k8bccr7dgaafsxcwam9p7s3075nzlirb19xfppz9dmh45jkv4dr";
       type = "gem";
     };
-    version = "19.7.0";
+    version = "19.8.0";
   };
   jekyll-sass-converter = {
     dependencies = [ "sass-embedded" ];
@@ -310,10 +310,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0r7906mnd7plqfdij3whj19dplfg7521ja3lg0q6h26564w9lpmy";
+      sha256 = "1l5gq9r0v6hyl8b0mmm8nkpl9jsz56i523rm2rwdhlalf2v5lbir";
       type = "gem";
     };
-    version = "19.7.0";
+    version = "19.8.0";
   };
   octokit = {
     dependencies = [ "faraday" "sawyer" ];
@@ -434,10 +434,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "038fzkbq5sw9lf947akhpsvdm14q6jfzl2yn87s8958h42sn0xjy";
+      sha256 = "1sasnvgfr8n4cinanmfc36i9f98bh9k3hsadjmrgxfs42mmx6rl2";
       type = "gem";
     };
-    version = "1.66.1";
+    version = "1.68.0";
   };
   sawyer = {
     dependencies = [ "addressable" "faraday" ];
