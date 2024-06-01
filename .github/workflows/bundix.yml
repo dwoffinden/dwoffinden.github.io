@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
-      - uses: cachix/install-nix-action@8887e596b4ee1134dae06b98d573bd674693f47c
+      - uses: cachix/install-nix-action@ba0dd844c9180cbf77aa72a116d6fbc515d0e87b
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - run: nix-env -i bundix nixpkgs-fmt -f '<nixpkgs>'
