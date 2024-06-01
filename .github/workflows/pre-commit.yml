@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b
 
-      - uses: ruby/setup-ruby@1198b074305f9356bd56dd4b311757cc0dab2f1c
+      - uses: ruby/setup-ruby@0cde4689ba33c09f1b890c1725572ad96751a3fc
         with:
           bundler-cache: true
           cache-version: 0
