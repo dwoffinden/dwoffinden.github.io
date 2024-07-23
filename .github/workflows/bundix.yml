@@ -18,9 +18,9 @@ jobs:
       - uses: cachix/install-nix-action@ba0dd844c9180cbf77aa72a116d6fbc515d0e87b
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run: nix-env -i bundix nixpkgs-fmt -f '<nixpkgs>'
+      - run: nix-env -f '<nixpkgs>' -iA bundix nixfmt-rfc-style
       - run: bundix -l
-      - run: nixpkgs-fmt gemset.nix
+      - run: nixfmt gemset.nix
       # Use the REST API to commit changes, so we get automatic commit signing
       - name: Commit changes
         env:

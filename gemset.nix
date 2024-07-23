@@ -1,6 +1,11 @@
 {
   activesupport = {
-    dependencies = [ "concurrent-ruby" "i18n" "minitest" "tzinfo" ];
+    dependencies = [
+      "concurrent-ruby"
+      "i18n"
+      "minitest"
+      "tzinfo"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -52,7 +57,10 @@
     version = "1.2.2";
   };
   em-websocket = {
-    dependencies = [ "eventmachine" "http_parser.rb" ];
+    dependencies = [
+      "eventmachine"
+      "http_parser.rb"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -73,7 +81,11 @@
     version = "1.2.7";
   };
   faraday = {
-    dependencies = [ "base64" "faraday-net_http" "ruby2_keywords" ];
+    dependencies = [
+      "base64"
+      "faraday-net_http"
+      "ruby2_keywords"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -124,7 +136,10 @@
     version = "4.0.0";
   };
   google-protobuf = {
-    groups = [ "default" "jekyll_plugins" ];
+    groups = [
+      "default"
+      "jekyll_plugins"
+    ];
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
@@ -134,7 +149,10 @@
     version = "3.25.1";
   };
   html-pipeline = {
-    dependencies = [ "activesupport" "nokogiri" ];
+    dependencies = [
+      "activesupport"
+      "nokogiri"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -166,7 +184,23 @@
     version = "1.14.1";
   };
   jekyll = {
-    dependencies = [ "addressable" "colorator" "em-websocket" "i18n" "jekyll-sass-converter" "jekyll-watch" "kramdown" "kramdown-parser-gfm" "liquid" "mercenary" "pathutil" "rouge" "safe_yaml" "terminal-table" "webrick" ];
+    dependencies = [
+      "addressable"
+      "colorator"
+      "em-websocket"
+      "i18n"
+      "jekyll-sass-converter"
+      "jekyll-watch"
+      "kramdown"
+      "kramdown-parser-gfm"
+      "liquid"
+      "mercenary"
+      "pathutil"
+      "rouge"
+      "safe_yaml"
+      "terminal-table"
+      "webrick"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -177,7 +211,10 @@
     version = "4.3.3";
   };
   jekyll-github-metadata = {
-    dependencies = [ "jekyll" "octokit" ];
+    dependencies = [
+      "jekyll"
+      "octokit"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -188,7 +225,10 @@
     version = "2.16.1";
   };
   jekyll-octicons = {
-    dependencies = [ "jekyll" "octicons" ];
+    dependencies = [
+      "jekyll"
+      "octicons"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -221,7 +261,11 @@
     version = "2.2.1";
   };
   jemoji = {
-    dependencies = [ "gemoji" "html-pipeline" "jekyll" ];
+    dependencies = [
+      "gemoji"
+      "html-pipeline"
+      "jekyll"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -264,7 +308,10 @@
     version = "4.0.4";
   };
   listen = {
-    dependencies = [ "rb-fsevent" "rb-inotify" ];
+    dependencies = [
+      "rb-fsevent"
+      "rb-inotify"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -305,7 +352,10 @@
     version = "5.19.0";
   };
   nokogiri = {
-    dependencies = [ "mini_portile2" "racc" ];
+    dependencies = [
+      "mini_portile2"
+      "racc"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -326,7 +376,10 @@
     version = "19.8.0";
   };
   octokit = {
-    dependencies = [ "faraday" "sawyer" ];
+    dependencies = [
+      "faraday"
+      "sawyer"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
@@ -368,7 +421,10 @@
     version = "1.7.3";
   };
   rake = {
-    groups = [ "default" "jekyll_plugins" ];
+    groups = [
+      "default"
+      "jekyll_plugins"
+    ];
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
@@ -440,8 +496,14 @@
     version = "1.0.5";
   };
   sass-embedded = {
-    dependencies = [ "google-protobuf" "rake" ];
-    groups = [ "default" "jekyll_plugins" ];
+    dependencies = [
+      "google-protobuf"
+      "rake"
+    ];
+    groups = [
+      "default"
+      "jekyll_plugins"
+    ];
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
@@ -451,7 +513,10 @@
     version = "1.69.6";
   };
   sawyer = {
-    dependencies = [ "addressable" "faraday" ];
+    dependencies = [
+      "addressable"
+      "faraday"
+    ];
     groups = [ "default" ];
     platforms = [ ];
     source = {
