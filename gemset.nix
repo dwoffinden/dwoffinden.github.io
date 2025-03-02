@@ -274,10 +274,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "00n9v19h0qgjijygfdkdh2gwpmdlz49nw1mqk6fnp43f317ngrz2";
+      sha256 = "0hr4hsir8lm8aw3yj9zi7hx2xs4k00xn9inh24642d6iy625v4l3";
       type = "gem";
     };
-    version = "3.0.0";
+    version = "3.1.0";
   };
   jekyll-watch = {
     dependencies = [ "listen" ];
@@ -546,10 +546,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "1ci5lqpc22wqbr8xk4db6njkm3z0wdp5ydjd0yk75gxgwkl54vv1";
+      sha256 = "1cbvgvl24ki6jlxjccx2j1vwwcpg36bivksmx78i43m35j6nf8bz";
       type = "gem";
     };
-    version = "1.83.4";
+    version = "1.85.1";
   };
   sawyer = {
     dependencies = [
