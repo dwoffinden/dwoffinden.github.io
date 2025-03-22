@@ -400,10 +400,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "0npx535cs8qc33n0lpbbwl0p9fi3a5bczn6ayqhxvknh9yqw77vb";
+      sha256 = "1b34gaa6fiby5fb0zn1p5f8h1rx84wxz0bq9w39y3fhv3i920y5v";
       type = "gem";
     };
-    version = "1.18.3";
+    version = "1.18.4";
   };
   octicons = {
     groups = [ "default" ];
