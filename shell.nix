@@ -4,7 +4,7 @@
 }:
 let
   # update gemset.nix with bundix -l
-  # e.g. nix-env --install bundix && bundix -l && nix-shell --run bundle exec jekyll serve
+  # e.g. nix-shell --run 'bundix -l' && nix-shell --run bundle exec jekyll serve
   gems = pkgs.bundlerEnv {
     name = "gems-for-some-project";
     gemdir = ./.;
@@ -12,6 +12,7 @@ let
 in
 pkgs.mkShell {
   packages = [
+    pkgs.bundix
     gems
     gems.wrappedRuby
   ];
