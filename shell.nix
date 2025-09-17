@@ -15,5 +15,12 @@ pkgs.mkShell {
     pkgs.bundix
     gems
     gems.wrappedRuby
+    pkgs.importNpmLock.hooks.linkNodeModulesHook
+    pkgs.nodejs
   ];
+
+  npmDeps = pkgs.importNpmLock.buildNodeModules {
+    npmRoot = ./.;
+    nodejs = pkgs.nodejs;
+  };
 }
