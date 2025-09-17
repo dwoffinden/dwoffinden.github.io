@@ -499,10 +499,10 @@
     platforms = [ ];
     source = {
       remotes = [ "https://rubygems.org" ];
-      sha256 = "1ch4k2y80r4glr579kxliqnxld2qa91ydq8fiqam38bzpbps3gpg";
+      sha256 = "05y4lwzci16c2xgckmpxkzq4czgkyaiiqhvrabdgaym3aj2jd10k";
       type = "gem";
     };
-    version = "3.4.0";
+    version = "3.4.2";
   };
   rouge = {
     groups = [ "default" ];
