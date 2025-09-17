@@ -28,3 +28,9 @@ jobs:
       - run: yarn install --immutable
 
       - run: bundle exec jekyll build
+
+      - uses: cachix/install-nix-action@56a7bb7b56d9a92d4fd1bc05758de7eea4a370a8 # v31.6.0
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - run: nix-shell --run 'bundle exec jekyll build'

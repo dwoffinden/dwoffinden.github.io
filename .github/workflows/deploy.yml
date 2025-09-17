@@ -27,19 +27,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@44511735964dcb71245e7e55f72539531f7bc0eb # v1.257.0
+      - uses: cachix/install-nix-action@56a7bb7b56d9a92d4fd1bc05758de7eea4a370a8 # v31.6.0
         with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-
-      - name: Setup Node
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: latest
-          cache: yarn
-
-      - run: yarn install --immutable
+          nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Setup Pages
         id: pages
@@ -47,7 +37,7 @@ jobs:
 
       # defaults output to '/_site':
       # --baseurl ${{ steps.pages.outputs.base_path }}
-      - run: bundle exec jekyll build
+      - run: nix-shell --run 'bundle exec jekyll build'
 
         # This will automatically upload an artifact from the '/_site' directory
       - name: Upload artifact

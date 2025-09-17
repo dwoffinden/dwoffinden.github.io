@@ -17,6 +17,7 @@ pkgs.mkShell {
     gems.wrappedRuby
     pkgs.importNpmLock.hooks.linkNodeModulesHook
     pkgs.nodejs
+    pkgs.nixfmt-rfc-style
   ];
 
   npmDeps = pkgs.importNpmLock.buildNodeModules {
