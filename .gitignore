@@ -1,7 +1,4 @@
-*.gem
-.bundle
 .direnv
-.jekyll-cache/
-.sass-cache
-_site/
-node_modules/
+public/
+themes/
+result

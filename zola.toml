@@ -1,0 +1,30 @@
+base_url = "https://daw.dev"
+theme = "hallo"
+compile_sass = true
+title = "Daniel Woffinden"
+description = "Software Engineer"
+default_language = "en"
+minify_html = true
+build_search_index = false
+
+[markdown]
+render_emoji = true
+
+[extra]
+greeting = "Hello!"
+iam = "I am"
+links = [
+    { title = "GitHub", url = "https://github.com/dwoffinden", icon = "github" },
+    { title = "LinkedIn", url = "https://linkedin.com/in/danielwoffinden", icon = "linkedin" },
+    { title = "StackOverflow", url = "https://stackoverflow.com/users/2125397/daniel-woffinden", icon = "stack-overflow" },
+    { title = "Keybase", url = "https://keybase.io/dwoffinden", icon = "keybase" }
+]
+
+[extra.author]
+name = "Daniel Woffinden"
+
+[extra.theme]
+background = "#282c35"
+foreground = "#e6edf3"
+hover = "#2f81f7"
+
