@@ -15,9 +15,10 @@ greeting = "Hello!"
 iam = "I am"
 links = [
     { title = "GitHub", url = "https://github.com/dwoffinden", icon = "github" },
+    { title = "Facebook", url = "https://facebook.com/d.woffinden", icon = "facebook" },
+    { title = "Keybase", url = "https://keybase.io/dwoffinden", icon = "keybase" },
     { title = "LinkedIn", url = "https://linkedin.com/in/danielwoffinden", icon = "linkedin" },
-    { title = "StackOverflow", url = "https://stackoverflow.com/users/2125397/daniel-woffinden", icon = "stack-overflow" },
-    { title = "Keybase", url = "https://keybase.io/dwoffinden", icon = "keybase" }
+    { title = "Stack Overflow", url = "https://stackoverflow.com/users/2125397/daniel-woffinden", icon = "stack-overflow" },
 ]
 
 [extra.author]
