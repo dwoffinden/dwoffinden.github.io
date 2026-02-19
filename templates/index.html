@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{{ config.title }}</title>
+
+        <link rel="stylesheet" href="{{ get_url(path='fonts.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='fontawesome/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path='hallo.css') }}">
+
+        {% if config.extra.theme %}
+            <style>
+                body {
+                    color: {{ config.extra.theme.foreground }} !important;
+                    background-color: {{ config.extra.theme.background }} !important;
+                }
+
+                a {
+                    color: {{ config.extra.theme.foreground }} !important;
+                }
+
+                a:hover {
+                    color: {{ config.extra.theme.hover }} !important;
+                }
+
+
+                img.portrait {
+                    border: 10px solid {{ config.extra.theme.foreground }} !important;
+                }
+            </style>
+        {% endif %}
+        <!-- TODO: contribute this upstream to
+           https://codeberg.org/janbaudisch/zola-hallo/src/branch/main/templates/index.html
+           so we can just extend it here without duplicating the rest? Exmaple:
+           https://github.com/getzola/hyde/blob/master/templates/index.html
+          -->
+        {% block extra_head %}
+
+            <meta property="og:title" content="{{ config.title }}" />
+            <meta property="og:image" content="{{ get_url(path='portrait.jpg') }}" />
+            <!-- TODO:
+                <meta property="og:description" content=" ... " />
+            -->
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="canonical" href="https://daw.dev/">
+
+            <link rel="apple-touch-icon" type="image/png" sizes="180x180"
+                href="{{ get_url(path='apple-touch-icon.png' ) }}">
+            <link rel="icon" href="{{ get_url(path='favicon.svg' ) }}" type="image/svg+xml">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ get_url(path='favicon-32x32.png' ) }}">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ get_url(path='favicon-16x16.png' ) }}">
+            <link rel="manifest" href="{{ get_url(path='site.webmanifest' ) }}">
+            <link rel="mask-icon" href="{{ get_url(path='safari-pinned-tab.svg' ) }}" color="#2f363d">
+
+            <meta name="apple-mobile-web-app-title" content="{{ config.title }}">
+            <meta name="application-name" content="{{ config.title }}">
+            <meta name="msapplication-TileColor" content="#2f363d">
+            <meta name="theme-color" content="#2f363d">
+
+        {% endblock %}
+    </head>
+    <body>
+        <main>
+            <div class="column left">
+              <picture>
+                <source srcset="{{ get_url(path='portrait.avif') }}" type="image/avif">
+                <img src="{{ get_url(path='portrait.jpg') }}" class="portrait" alt="Portrait" width="460" height="460" loading="lazy" />
+              </picture>
+            </div>
+            <div class="column right">
+                <h1>{{ config.extra.greeting | default(value="Hello") }}</h1>
+                <h2>{{ config.extra.iam | default(value="I am") }} {{ config.extra.author.name | default(value="Hallo") }}.</h2>
+                {% if config.extra.hallo_use_introduction_template %}
+                    <p>{% include "partials/introduction.html" %}</p>
+                {% else %}
+                    <p>{{ section.content | safe }}</p>
+                {% endif %}
+
+                {% if config.extra.links %}
+                    <div class="links">
+                        {% for link in config.extra.links %}
+                            <a rel="me" href="{{ link.url }}" title="{{ link.title }}">
+                                {% if link.iconset %}
+                                    <span class="{{ link.iconset }} {{ 'fa-' ~ link.icon }}"></span>
+                                {% else %}
+                                    <span class="fab {{ 'fa-' ~ link.icon }}"></span>
+                                {% endif %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </main>
+    </body>
+</html>
