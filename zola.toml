@@ -22,7 +22,7 @@ links = [
 ]
 
 [extra.author]
-name = "Daniel Woffinden"
+name = "Daniel\u00A0Woffinden"
 
 [extra.theme]
 background = "#282c35"
