@@ -33,10 +33,26 @@ jobs:
       - name: Build site
         run: nix build
 
+      # stolen from https://github.com/actions/upload-pages-artifact/blob/7b1f4a764d45c48632c6b24a0339c27f5614fb0b/action.yml#L24-L39
+      # as we need to produce a valid artifact as per
+      # https://github.com/actions/upload-pages-artifact/tree/main?tab=readme-ov-file#artifact-validation
+      # but the -pages action does not support include-hidden-files and does not include dotfiles in the tar
+      - name: Archive artifact
+        shell: sh
+        run: |
+          tar \
+            --dereference --hard-dereference \
+            --directory ./result \
+            -cvf "$RUNNER_TEMP/artifact.tar" \
+            --exclude=.git \
+            --exclude=.github \
+            .
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
-          path: ./result
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
           include-hidden-files: true
 
   deploy:
