@@ -1,0 +1,21 @@
+<div class="gpg-key-container">
+    <button class="copy-btn" onclick="copyGpgKey()">
+        <span class="fas fa-copy"></span> Copy Public Key
+    </button>
+    <pre id="gpg-key-block">{{ load_data(path=path) }}</pre>
+</div>
+
+<script>
+    function copyGpgKey() {
+        const keyBlock = document.getElementById('gpg-key-block');
+        const text = keyBlock.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="fas fa-check"></span> Copied!';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 2000);
+        });
+    }
+</script>
