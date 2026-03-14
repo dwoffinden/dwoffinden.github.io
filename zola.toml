@@ -19,6 +19,7 @@ links = [
     { title = "Keybase", url = "https://keybase.io/dwoffinden", icon = "keybase" },
     { title = "LinkedIn", url = "https://linkedin.com/in/danielwoffinden", icon = "linkedin" },
     { title = "Stack Overflow", url = "https://stackoverflow.com/users/2125397/daniel-woffinden", icon = "stack-overflow" },
+    { title = "GPG Key", icon = "key", iconset = "fas", url = "46FC889EBC38100E51E83245F3EA503B360FBD40.asc"},
 ]
 
 [extra.author]
