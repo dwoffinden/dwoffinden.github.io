@@ -1,0 +1,111 @@
+$color-background: #282c35;
+$color-foreground: #e6edf3;
+$color-hover: #2f81f7;
+
+@import '../themes/hallo/sass/hallo/variables';
+@import '../themes/hallo/sass/hallo/base';
+@import '../themes/hallo/sass/hallo/layout';
+
+
+// Custom styles migrated from base.html
+body {
+    color: $color-foreground !important;
+    background-color: $color-background !important;
+}
+
+a {
+    color: $color-foreground !important;
+
+    &:hover {
+        color: $color-hover !important;
+    }
+}
+
+img.portrait {
+    border: 10px solid $color-foreground !important;
+}
+
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid $color-foreground;
+    color: $color-foreground;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    transition: color .2s ease-out, border-color .2s ease-out;
+
+    &:hover {
+        border-color: $color-hover;
+        color: $color-hover;
+    }
+
+    &.floating {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        margin: 0;
+        z-index: 10;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &.copied {
+        border-color: #2ea043;
+        color: #2ea043;
+        opacity: 1;
+    }
+}
+
+// Custom styles migrated from page.html
+// Targeted specifically to ensure we don't break the homepage flex layout
+.page-layout main {
+    display: block !important;
+    margin-top: 2rem !important;
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    h1 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+}
+
+.gpg-key-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.gpg-key-wrapper {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    max-width: 100%;
+    margin: 0 auto;
+
+    pre {
+        margin: 0;
+        padding-top: 3rem;
+        /* Space for the floating button */
+    }
+}
+
+.back-link {
+    margin-top: 3rem;
+}
