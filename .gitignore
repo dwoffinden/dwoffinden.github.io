@@ -1,4 +1,5 @@
 .direnv
 public/
+static/processed_images/
 themes/
 result

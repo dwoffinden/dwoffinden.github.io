@@ -2,10 +2,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% set avif = resize_image(path='/portrait.jpg', width=1200, height=1200, op='fit', format='avif', quality=45) %}
+{% set jpg = resize_image(path='/portrait.jpg', width=300, height=300, op='fit', format='jpg', quality=80) %}
 <div class="column left">
     <picture>
-        <source srcset="/portrait.avif" type="image/avif">
-        <img src="/portrait.jpg" class="portrait" alt="Portrait" width="460" height="460" loading="lazy" />
+        <source srcset="{{ avif.url }}" type="image/avif" width="{{ avif.width }}" height="{{ avif.height }}">
+        <img src="{{ jpg.url }}" class="portrait" alt="Portrait" width="{{ jpg.width }}" height="{{ jpg.height }}"
+            loading="lazy" />
     </picture>
 </div>
 <div class="column right">
