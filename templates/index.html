@@ -8,7 +8,7 @@
     <picture>
         <source srcset="{{ avif.url }}" type="image/avif" width="{{ avif.width }}" height="{{ avif.height }}">
         <img src="{{ jpg.url }}" class="portrait" alt="Portrait" width="{{ jpg.width }}" height="{{ jpg.height }}"
-            loading="lazy" />
+            fetchpriority="high" />
     </picture>
 </div>
 <div class="column right">
