@@ -1,0 +1,16 @@
+/* Derived from https://codeberg.org/janbaudisch/zola-hallo/ */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat-Regular'), url(fonts/Montserrat-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Montserrat Bold'), local('Montserrat-Bold'), url(fonts/Montserrat-Bold.otf) format('opentype');
+}
