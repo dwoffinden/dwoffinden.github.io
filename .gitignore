@@ -1,6 +1,7 @@
 .direnv
 .pre-commit-config.yaml
 public/
+result
+static/fa-svgs
 static/processed_images/
 themes/
-result

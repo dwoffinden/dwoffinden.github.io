@@ -34,6 +34,22 @@
         "type": "github"
       }
     },
+    "font-awesome": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770747440,
+        "narHash": "sha256-BTm78NCZXksCuzoXm2B39/UIB/Sb/wwL1vvaGRVUaio=",
+        "owner": "FortAwesome",
+        "repo": "Font-Awesome",
+        "rev": "337dd2045d5621ce0f8567c33c256f3dedeed55d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FortAwesome",
+        "repo": "Font-Awesome",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -110,6 +126,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "font-awesome": "font-awesome",
         "git-hooks": "git-hooks",
         "nixpkgs": "nixpkgs_2",
         "zola-hallo": "zola-hallo"

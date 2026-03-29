@@ -1,5 +1,6 @@
 {# Derived from https://codeberg.org/janbaudisch/zola-hallo/ #}
 {% extends "base.html" %}
+{% import "macros/icon.html" as icons %}
 
 {% block content %}
 {% set avif = resize_image(path='/portrait.jpg', width=1200, height=1200, op='fit', format='avif', quality=45) %}
@@ -24,10 +25,10 @@
     <div class="links">
         {% for link in config.extra.links %}
         <a rel="me" href="{{ link.url }}" title="{{ link.title }}">
-            {% if link.iconset %}
-            <span class="{{ link.iconset }} {{ 'fa-' ~ link.icon }}"></span>
+            {% if link.iconset is defined and link.iconset == "fas" %}
+            {{ icons::icon(name=link.icon, style="solid") }}
             {% else %}
-            <span class="fab {{ 'fa-' ~ link.icon }}"></span>
+            {{ icons::icon(name=link.icon) }}
             {% endif %}
         </a>
         {% endfor %}

@@ -1,9 +1,14 @@
+{% import "macros/icon.html" as icons %}
 <div class="gpg-key-wrapper">
     <button class="copy-btn floating" onclick="copyGpgKey(this)">
-        <span class="fas fa-copy"></span>
+        {{ icons::icon(name="copy", style="solid") }}
     </button>
     <pre id="gpg-key-block">{{ load_data(path=path) }}</pre>
 </div>
+
+<template id="icon-check">
+    {{ icons::icon(name="check", style="solid") }}
+</template>
 
 <script>
     function copyGpgKey(btn) {
@@ -11,7 +16,7 @@
         const text = keyBlock.innerText;
         navigator.clipboard.writeText(text).then(() => {
             const originalHtml = btn.innerHTML;
-            btn.innerHTML = '<span class="fas fa-check"></span>';
+            btn.innerHTML = document.getElementById('icon-check').innerHTML;
             btn.classList.add('copied');
             setTimeout(() => {
                 btn.innerHTML = originalHtml;

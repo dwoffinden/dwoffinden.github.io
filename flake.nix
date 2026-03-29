@@ -9,6 +9,10 @@
       url = "git+https://codeberg.org/janbaudisch/zola-hallo?lfs=1";
       flake = false;
     };
+    font-awesome = {
+      url = "github:FortAwesome/Font-Awesome";
+      flake = false;
+    };
   };
 
   outputs =
@@ -18,6 +22,7 @@
       flake-utils,
       git-hooks,
       zola-hallo,
+      font-awesome,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -44,6 +49,10 @@
             mkdir -p themes/${themeName}
             cp -r ${zola-hallo}/* themes/${themeName}/
             chmod -R +w .
+            rm -rf themes/${themeName}/static/fontawesome
+            mkdir -p static/fa-svgs/{brands,solid}
+            cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/brands/
+            cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/solid/
             zola build
           '';
 
@@ -73,6 +82,12 @@
             mkdir -p themes
             if [[ ! -d themes/${themeName} ]]; then
               cp -r --no-preserve=mode,ownership ${zola-hallo} themes/${themeName}
+              rm -rf themes/${themeName}/static/fontawesome
+            fi
+            if [[ ! -d static/fa-svgs ]]; then
+              mkdir -p static/fa-svgs/{brands,solid}
+              cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/brands/
+              cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/solid/
             fi
             echo "Zola dev shell loaded. Run 'zola serve' to start."
           '';
