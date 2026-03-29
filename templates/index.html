@@ -3,13 +3,13 @@
 {% import "macros/icon.html" as icons %}
 
 {% block content %}
-{% set avif = resize_image(path='/portrait.jpg', width=1200, height=1200, op='fit', format='avif', quality=45) %}
+{% set avif_1x = resize_image(path='/portrait.jpg', width=300, height=300, op='fit', format='avif', quality=90) %}
+{% set avif_2x = resize_image(path='/portrait.jpg', width=600, height=600, op='fit', format='avif', quality=85) %}
 {% set jpg = resize_image(path='/portrait.jpg', width=300, height=300, op='fit', format='jpg', quality=80) %}
 <div class="column left">
     <picture>
-        <source srcset="{{ avif.url }}" type="image/avif" width="{{ avif.width }}" height="{{ avif.height }}">
-        <img src="{{ jpg.url }}" class="portrait" alt="Portrait" width="{{ jpg.width }}" height="{{ jpg.height }}"
-            fetchpriority="high" />
+        <source srcset="{{ avif_1x.url }} 1x, {{ avif_2x.url }} 2x" type="image/avif">
+        <img src="{{ jpg.url }}" class="portrait" alt="Portrait" width="300" height="300" fetchpriority="high" />
     </picture>
 </div>
 <div class="column right">
