@@ -12,4 +12,3 @@ This is my public GPG key. You can use it to verify my digital signatures or enc
 - [Download .asc file](/46FC889EBC38100E51E83245F3EA503B360FBD40.asc)
 
 {{ gpg_key(path="static/46FC889EBC38100E51E83245F3EA503B360FBD40.asc") }}
-
