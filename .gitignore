@@ -2,6 +2,6 @@
 .pre-commit-config.yaml
 public/
 result
-static/fa-svgs
+fa-svgs/
 static/processed_images/
 themes/

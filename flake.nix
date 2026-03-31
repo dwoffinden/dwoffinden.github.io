@@ -50,9 +50,11 @@
             cp -r ${zola-hallo}/* themes/${themeName}/
             chmod -R +w .
             rm -rf themes/${themeName}/static/fontawesome
-            mkdir -p static/fa-svgs
-            cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/
-            cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/
+            mkdir -p fa-svgs
+            cp \
+              ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg \
+              ${font-awesome}/svgs/solid/{key,code,copy,check}.svg \
+              fa-svgs/
             zola build
           '';
 
@@ -80,14 +82,20 @@
           shellHook = ''
             ${pre-commit-check.shellHook}
             mkdir -p themes
-            if [[ ! -d themes/${themeName} ]]; then
+            if [[ ! -f themes/${themeName}/.source-path ]] || [[ "$(cat themes/${themeName}/.source-path)" != "${zola-hallo}" ]]; then
+              rm -rf themes/${themeName}
               cp -r --no-preserve=mode,ownership ${zola-hallo} themes/${themeName}
               rm -rf themes/${themeName}/static/fontawesome
+              echo "${zola-hallo}" > themes/${themeName}/.source-path
             fi
-            if [[ ! -d static/fa-svgs ]]; then
-              mkdir -p static/fa-svgs
-              cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/
-              cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/
+            if [[ ! -f fa-svgs/.source-path ]] || [[ "$(cat fa-svgs/.source-path)" != "${font-awesome}" ]]; then
+              rm -rf fa-svgs
+              mkdir -p fa-svgs
+              cp \
+                ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg \
+                ${font-awesome}/svgs/solid/{key,code,copy,check}.svg \
+                fa-svgs/
+              echo "${font-awesome}" > fa-svgs/.source-path
             fi
             echo "Zola dev shell loaded. Run 'zola serve' to start."
           '';
