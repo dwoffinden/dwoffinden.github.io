@@ -25,11 +25,7 @@
     <div class="links">
         {% for link in config.extra.links %}
         <a rel="me" href="{{ link.url }}" title="{{ link.title }}">
-            {% if link.iconset is defined and link.iconset == "fas" %}
-            {{ icons::icon(name=link.icon, style="solid") }}
-            {% else %}
             {{ icons::icon(name=link.icon) }}
-            {% endif %}
         </a>
         {% endfor %}
     </div>

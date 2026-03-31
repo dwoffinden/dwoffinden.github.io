@@ -1,5 +1,5 @@
 {# Icons by Font Awesome (https://fontawesome.com) - Licensed under CC BY 4.0 #}
-{% macro icon(name, style="brands") %}
-{% set svg = load_data(path="static/fa-svgs/" ~ style ~ "/" ~ name ~ ".svg") %}
+{% macro icon(name) %}
+{% set svg = load_data(path="static/fa-svgs/" ~ name ~ ".svg") %}
 <span class="icon" aria-hidden="true">{{ svg | safe }}</span>
 {% endmacro icon %}

@@ -50,9 +50,9 @@
             cp -r ${zola-hallo}/* themes/${themeName}/
             chmod -R +w .
             rm -rf themes/${themeName}/static/fontawesome
-            mkdir -p static/fa-svgs/{brands,solid}
-            cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/brands/
-            cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/solid/
+            mkdir -p static/fa-svgs
+            cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/
+            cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/
             zola build
           '';
 
@@ -85,9 +85,9 @@
               rm -rf themes/${themeName}/static/fontawesome
             fi
             if [[ ! -d static/fa-svgs ]]; then
-              mkdir -p static/fa-svgs/{brands,solid}
-              cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/brands/
-              cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/solid/
+              mkdir -p static/fa-svgs
+              cp ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg static/fa-svgs/
+              cp ${font-awesome}/svgs/solid/{key,code,copy,check}.svg static/fa-svgs/
             fi
             echo "Zola dev shell loaded. Run 'zola serve' to start."
           '';

@@ -1,13 +1,13 @@
 {% import "macros/icon.html" as icons %}
 <div class="gpg-key-wrapper">
     <button class="copy-btn floating" onclick="copyGpgKey(this)">
-        {{ icons::icon(name="copy", style="solid") }}
+        {{ icons::icon(name="copy") }}
     </button>
     <pre id="gpg-key-block">{{ load_data(path=path) }}</pre>
 </div>
 
 <template id="icon-check">
-    {{ icons::icon(name="check", style="solid") }}
+    {{ icons::icon(name="check") }}
 </template>
 
 <script>
