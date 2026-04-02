@@ -18,6 +18,7 @@ links = [
     { title = "Facebook", url = "https://facebook.com/d.woffinden", icon = "facebook" },
     { title = "Keybase", url = "https://keybase.io/dwoffinden", icon = "keybase" },
     { title = "LinkedIn", url = "https://linkedin.com/in/danielwoffinden", icon = "linkedin" },
+    { title = "Matrix", url = "https://matrix.to/#/@dwoffinden:matrix.org", icon = "matrix" },
     { title = "Stack Overflow", url = "https://stackoverflow.com/users/2125397", icon = "stack-overflow" },
     { title = "GPG Key", icon = "key", url = "/key/" },
     { title = "Source", icon = "code", url = "https://github.com/dwoffinden/dwoffinden.github.io"}

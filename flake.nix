@@ -13,6 +13,10 @@
       url = "github:FortAwesome/Font-Awesome";
       flake = false;
     };
+    simple-icons = {
+      url = "github:simple-icons/simple-icons";
+      flake = false;
+    };
   };
 
   outputs =
@@ -23,6 +27,7 @@
       git-hooks,
       zola-hallo,
       font-awesome,
+      simple-icons,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -38,6 +43,22 @@
             nixfmt-rfc-style.enable = true;
           };
         };
+
+        copyTheme = ''
+          mkdir -p themes
+          rm -rf themes/${themeName}
+          cp -r --no-preserve=mode,ownership ${zola-hallo} themes/${themeName}
+          rm -rf themes/${themeName}/static/fontawesome
+        '';
+
+        copyIcons = ''
+          rm -rf fa-svgs
+          mkdir -p fa-svgs
+          cp --no-preserve=mode,ownership \
+            ${font-awesome}/svgs/{brands/{github,facebook,keybase,linkedin,stack-overflow},solid/{key,code,copy,check}}.svg \
+            ${simple-icons}/icons/matrix.svg \
+            fa-svgs/
+        '';
       in
       {
         packages.default = pkgs.stdenv.mkDerivation {
@@ -46,15 +67,8 @@
           nativeBuildInputs = [ pkgs.zola ];
 
           buildPhase = ''
-            mkdir -p themes/${themeName}
-            cp -r ${zola-hallo}/* themes/${themeName}/
-            chmod -R +w .
-            rm -rf themes/${themeName}/static/fontawesome
-            mkdir -p fa-svgs
-            cp \
-              ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg \
-              ${font-awesome}/svgs/solid/{key,code,copy,check}.svg \
-              fa-svgs/
+            ${copyTheme}
+            ${copyIcons}
             zola build
           '';
 
@@ -81,21 +95,13 @@
           packages = [ pkgs.zola ];
           shellHook = ''
             ${pre-commit-check.shellHook}
-            mkdir -p themes
             if [[ ! -f themes/${themeName}/.source-path ]] || [[ "$(cat themes/${themeName}/.source-path)" != "${zola-hallo}" ]]; then
-              rm -rf themes/${themeName}
-              cp -r --no-preserve=mode,ownership ${zola-hallo} themes/${themeName}
-              rm -rf themes/${themeName}/static/fontawesome
+              ${copyTheme}
               echo "${zola-hallo}" > themes/${themeName}/.source-path
             fi
-            if [[ ! -f fa-svgs/.source-path ]] || [[ "$(cat fa-svgs/.source-path)" != "${font-awesome}" ]]; then
-              rm -rf fa-svgs
-              mkdir -p fa-svgs
-              cp \
-                ${font-awesome}/svgs/brands/{github,facebook,keybase,linkedin,stack-overflow}.svg \
-                ${font-awesome}/svgs/solid/{key,code,copy,check}.svg \
-                fa-svgs/
-              echo "${font-awesome}" > fa-svgs/.source-path
+            if [[ ! -f fa-svgs/.source-path ]] || [[ "$(cat fa-svgs/.source-path)" != "$(echo -e "${font-awesome}\n${simple-icons}")" ]]; then
+              ${copyIcons}
+              echo -e "${font-awesome}\n${simple-icons}" > fa-svgs/.source-path
             fi
             echo "Zola dev shell loaded. Run 'zola serve' to start."
           '';
