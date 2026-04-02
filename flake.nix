@@ -70,6 +70,7 @@
             ${copyTheme}
             ${copyIcons}
             zola build
+            rm -f public/portrait.jpg
           '';
 
           installPhase = ''
