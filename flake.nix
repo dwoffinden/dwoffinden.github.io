@@ -70,7 +70,8 @@
             ${copyTheme}
             ${copyIcons}
             zola build
-            rm -f public/portrait.jpg
+            rm public/{,images/}portrait.jpg
+            rmdir public/images
           '';
 
           installPhase = ''
