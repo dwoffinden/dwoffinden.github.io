@@ -5,6 +5,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     git-hooks.url = "github:cachix/git-hooks.nix";
+    git-hooks.inputs.nixpkgs.follows = "nixpkgs";
+    flint.url = "github:notashelf/flint";
+    flint.inputs.nixpkgs.follows = "nixpkgs";
     zola-hallo = {
       url = "git+https://codeberg.org/janbaudisch/zola-hallo?lfs=1";
       flake = false;
@@ -25,6 +28,7 @@
       nixpkgs,
       flake-utils,
       git-hooks,
+      flint,
       zola-hallo,
       font-awesome,
       simple-icons,
@@ -41,6 +45,12 @@
           hooks = {
             mdformat.enable = true;
             nixfmt-rfc-style.enable = true;
+            flint = {
+              enable = true;
+              name = "flint";
+              entry = "${flint.packages.${system}.default}/bin/flint --fail-if-multiple-versions";
+              files = "flake\\.(nix|lock)$";
+            };
           };
         };
 
@@ -94,7 +104,10 @@
 
         devShells.default = pkgs.mkShell {
           buildInputs = pre-commit-check.enabledPackages;
-          packages = [ pkgs.zola ];
+          packages = [
+            pkgs.zola
+            flint.packages.${system}.default
+          ];
           shellHook = ''
             ${pre-commit-check.shellHook}
             if [[ ! -f themes/${themeName}/.source-path ]] || [[ "$(cat themes/${themeName}/.source-path)" != "${zola-hallo}" ]]; then
