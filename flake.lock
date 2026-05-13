@@ -143,11 +143,11 @@
     "simple-icons": {
       "flake": false,
       "locked": {
-        "lastModified": 1777213984,
-        "narHash": "sha256-6Lzk7rWd5W+qXS4bZuLr/eNPW9uvXnzcExsCxMAOnto=",
+        "lastModified": 1778602265,
+        "narHash": "sha256-74HPacwsbEWJHVP2bZQ19RwGHRIjtbBGcyI/VZeuflU=",
         "owner": "simple-icons",
         "repo": "simple-icons",
-        "rev": "8554df826b4aa83f58a2d7559993e1cd86b6036c",
+        "rev": "7a581846a2061b49077a3b5fe357c3afbb0b845c",
         "type": "github"
       },
       "original": {
