@@ -51,6 +51,10 @@
               entry = "${flint.packages.${system}.default}/bin/flint --fail-if-multiple-versions";
               files = "flake\\.(nix|lock)$";
             };
+            yamlfmt = {
+              enable = true;
+              settings.lint-only = false;
+            };
           };
         };
 
