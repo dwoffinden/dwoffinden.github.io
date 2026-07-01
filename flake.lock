@@ -39,11 +39,11 @@
     "font-awesome": {
       "flake": false,
       "locked": {
-        "lastModified": 1770747440,
-        "narHash": "sha256-BTm78NCZXksCuzoXm2B39/UIB/Sb/wwL1vvaGRVUaio=",
+        "lastModified": 1782424997,
+        "narHash": "sha256-rWGorkZFzytPCODWmoSiLMrF9+hVWO2aNw3/UCiZxZ8=",
         "owner": "FortAwesome",
         "repo": "Font-Awesome",
-        "rev": "337dd2045d5621ce0f8567c33c256f3dedeed55d",
+        "rev": "70fb2dd154b617f62fc4ae5b0b7e2943bfd2aa96",
         "type": "github"
       },
       "original": {
