@@ -95,24 +95,7 @@
         "font-awesome": "font-awesome",
         "git-hooks": "git-hooks",
         "nixpkgs": "nixpkgs",
-        "simple-icons": "simple-icons",
         "zola-hallo": "zola-hallo"
-      }
-    },
-    "simple-icons": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782661446,
-        "narHash": "sha256-u+pLyXJocH5KJrDCO04ZsgK1I3bAmkAmEHI0HxcT+/k=",
-        "owner": "simple-icons",
-        "repo": "simple-icons",
-        "rev": "99fbe6a82b31d49a37fee878d5fc4f37a53df155",
-        "type": "github"
-      },
-      "original": {
-        "owner": "simple-icons",
-        "repo": "simple-icons",
-        "type": "github"
       }
     },
     "zola-hallo": {

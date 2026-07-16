@@ -15,10 +15,6 @@
       url = "github:FortAwesome/Font-Awesome";
       flake = false;
     };
-    simple-icons = {
-      url = "github:simple-icons/simple-icons";
-      flake = false;
-    };
   };
 
   outputs =
@@ -29,7 +25,6 @@
       flint,
       zola-hallo,
       font-awesome,
-      simple-icons,
       ...
     }:
     let
@@ -51,8 +46,7 @@
         rm -rf fa-svgs
         mkdir -p fa-svgs
         cp --no-preserve=mode,ownership \
-          ${font-awesome}/svgs/{brands/{github,facebook,keybase,linkedin,stack-overflow},solid/{key,code,copy,check}}.svg \
-          ${simple-icons}/icons/matrix.svg \
+          ${font-awesome}/svgs/{brands/{github,facebook,keybase,linkedin,stack-overflow,matrix},solid/{key,code,copy,check}}.svg \
           fa-svgs/
       '';
     in
@@ -134,9 +128,9 @@
                 ${copyTheme}
                 echo "${zola-hallo}" > themes/${themeName}/.source-path
               fi
-              if [[ ! -f fa-svgs/.source-path ]] || [[ "$(cat fa-svgs/.source-path)" != "$(echo -e "${font-awesome}\n${simple-icons}")" ]]; then
+              if [[ ! -f fa-svgs/.source-path ]] || [[ "$(cat fa-svgs/.source-path)" != "$(echo -e "${font-awesome}")" ]]; then
                 ${copyIcons}
-                echo -e "${font-awesome}\n${simple-icons}" > fa-svgs/.source-path
+                echo -e "${font-awesome}" > fa-svgs/.source-path
               fi
               echo "Zola dev shell loaded. Run 'zola serve' to start."
             '';
