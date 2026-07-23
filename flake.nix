@@ -82,7 +82,7 @@
           src = ./.;
           hooks = {
             mdformat.enable = true;
-            nixfmt-rfc-style.enable = true;
+            nixfmt.enable = true;
             flint = {
               enable = true;
               name = "flint";
