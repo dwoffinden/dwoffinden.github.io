@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1767431140,
-        "narHash": "sha256-ug37Jt6r8LP3161suTh6IW+fkx0a7kiSAhAPsVcPrkA=",
+        "lastModified": 1783727699,
+        "narHash": "sha256-BOQsKIVekTCalqI7Io5LNd6O/2Xp0Tj8bqWQva2lEqU=",
         "owner": "notashelf",
         "repo": "flint",
-        "rev": "7832a5b5f5ef1243818f8f5e357ad1ee2d35d2b7",
+        "rev": "56e8a7d257b671db1d83cc15e21e34e1e92c2b8a",
         "type": "github"
       },
       "original": {
@@ -39,11 +39,11 @@
     "font-awesome": {
       "flake": false,
       "locked": {
-        "lastModified": 1782424997,
-        "narHash": "sha256-rWGorkZFzytPCODWmoSiLMrF9+hVWO2aNw3/UCiZxZ8=",
+        "lastModified": 1784138970,
+        "narHash": "sha256-FQ2XvDi2JQ/XR8xgy3f8uJnsQW/lF0/IehCJvSHS1Y4=",
         "owner": "FortAwesome",
         "repo": "Font-Awesome",
-        "rev": "70fb2dd154b617f62fc4ae5b0b7e2943bfd2aa96",
+        "rev": "14c65a3747d0f3b751f15831fc719236aea8729d",
         "type": "github"
       },
       "original": {
@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1782908218,
-        "narHash": "sha256-wLMOrPgVyeF3XmP+qfYcLqnVdTxikdcSvbIY7rA9jTA=",
+        "lastModified": 1784288435,
+        "narHash": "sha256-ReRHaLgr/uVqdD8afFSn+myXIfpHeOhP0yYe0TJqAA8=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "9f7e99119ece7705299595299f3b031f39356de1",
+        "rev": "43b3c1ab9d40fb1dbb008f451988a91e375825e9",
         "type": "github"
       },
       "original": {
