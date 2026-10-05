@@ -1,6 +1,5 @@
 {# Derived from https://codeberg.org/janbaudisch/zola-hallo/ #}
 {% extends "base.html" %}
-{% import "macros/icon.html" as icons %}
 
 {% block content %}
 {% set avif_1x = resize_image(path='/portrait.jpg', width=300, height=300, op='fit', format='avif', quality=90) %}
@@ -25,7 +24,7 @@
     <div class="links">
         {% for link in config.extra.links %}
         <a rel="me" href="{{ link.url }}" title="{{ link.title }}">
-            {{ icons::icon(name=link.icon) }}
+            {{ <icon name={link.icon} /> }}
         </a>
         {% endfor %}
     </div>

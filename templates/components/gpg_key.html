@@ -1,13 +1,13 @@
-{% import "macros/icon.html" as icons %}
+{% component gpg_key(path: string) %}
 <div class="gpg-key-wrapper">
     <button class="copy-btn floating" onclick="copyGpgKey(this)">
-        {{ icons::icon(name="copy") }}
+        {{ <icon name="copy" /> }}
     </button>
     <pre id="gpg-key-block">{{ load_data(path=path) }}</pre>
 </div>
 
 <template id="icon-check">
-    {{ icons::icon(name="check") }}
+    {{ <icon name="check" /> }}
 </template>
 
 <script>
@@ -25,3 +25,4 @@
         });
     }
 </script>
+{% endcomponent gpg_key %}

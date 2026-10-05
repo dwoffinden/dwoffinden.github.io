@@ -60,7 +60,11 @@
           default = pkgs.stdenv.mkDerivation {
             name = "dwoffinden-github-io";
             src = ./.;
-            nativeBuildInputs = [ pkgs.zola ];
+            nativeBuildInputs = [
+              pkgs.zola
+              pkgs.cacert
+            ];
+            SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
 
             buildPhase = ''
               ${copyTheme}
@@ -88,6 +92,7 @@
               name = "flint";
               entry = "${flint.packages.${system}.default}/bin/flint --fail-if-multiple-versions";
               files = "flake\\.(nix|lock)$";
+              pass_filenames = false;
             };
             yamlfmt = {
               enable = true;
