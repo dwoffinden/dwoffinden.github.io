@@ -11,6 +11,7 @@
     <h1>{{ page.title }}</h1>
     <div class="page-content">
         {{ page.content | safe }}
+        {% block extra_content %}{% endblock extra_content %}
     </div>
 
     <div class="back-link">
