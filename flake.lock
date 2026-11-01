@@ -101,12 +101,12 @@
     "zola-hallo": {
       "flake": false,
       "locked": {
-        "lastModified": 1758660718,
+        "lastModified": 1791565422,
         "lfs": true,
-        "narHash": "sha256-Gd1qY7c+7KNQKZlODnTLT7mLDQI9vs8eYXr0U0VjOxM=",
+        "narHash": "sha256-A2GVdilOn0+uqemfdey+tlCuAURAmO73xXnnV3P6Cz8=",
         "ref": "refs/heads/main",
-        "rev": "fa4c43e77cd76dafad5fd5b7d0022337e7ebe4ea",
-        "revCount": 37,
+        "rev": "7c0eb2bbed71576ee5a811d3111ce4ab3d4fcb06",
+        "revCount": 39,
         "type": "git",
         "url": "https://codeberg.org/janbaudisch/zola-hallo"
       },
